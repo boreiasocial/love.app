@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Diário do Casal</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<header>
+
+<h1>💜 Diário do Casal 💜</h1>
+
+<h2>
+
+❤️ {{ dias }} dias juntos ❤️
+
+</h2>
+
+</header>
+
+<section class="perfil">
+
+<h3>Foto do casal</h3>
+
+<img
+
+id="slideshow"
+
+src=""
+
+alt="Foto"
+
+>
+
+<form
+
+action="/upload"
+
+method="POST"
+
+enctype="multipart/form-data"
+
+>
+
+<input
+
+type="file"
+
+name="images"
+
+multiple
+
+>
+
+<button>
+
+Enviar Fotos
+
+</button>
+
+</form>
+
+</section>
+
+<hr>
+
+<section>
+
+<h2>
+
+💌 Escrever Carta
+
+</h2>
+
+<form
+
+action="/letter"
+
+method="POST"
+
+>
+
+<input
+
+type="text"
+
+name="title"
+
+placeholder="Título"
+
+required
+
+>
+
+<input
+
+type="text"
+
+name="author"
+
+placeholder="Autor"
+
+required
+
+>
+
+<textarea
+
+name="content"
+
+placeholder="Escreva aqui..."
+
+required
+
+></textarea>
+
+<button>
+
+Salvar Carta
+
+</button>
+
+</form>
+
+</section>
+
+<hr>
+
+<section>
+
+<h2>
+
+💌 Cartas
+
+</h2>
+
+<div
+
+id="letters"
+
+>
+
+</div>
+
+</section>
+
+<script
+
+src="{{ url_for('static', filename='script.js') }}"
+
+></script>
+
+</body>
+
+</html>
